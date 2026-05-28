@@ -1,0 +1,8 @@
+I used a simple flat schema because it is easier to validate and store in JSON format. 
+The schema contains fixed enumerated values for claim_type and severity instead of free text, 
+which reduces inconsistent outputs from the model. A nested schema was avoided because the 
+assignment only requires a few fields and keeping it flat improves readability. 
+
+The validation step helped catch unexpected outputs such as invalid claim types like "unknown" 
+and missing numeric values for estimated_loss in ambiguous claims. This ensured that only 
+clean and standardized records were written to the final JSON file.
